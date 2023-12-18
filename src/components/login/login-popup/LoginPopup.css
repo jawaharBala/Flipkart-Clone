@@ -10,6 +10,7 @@
   max-width: 750px;
   min-width: 650px;
   display: flex;
+  position: relative;
 }
 
 .leftPanel {
@@ -42,7 +43,7 @@
   margin-bottom: 34px;
   font-size: 16px;
 }
-.loginForm input {
+.loginForm > input {
   all: unset;
   padding: 8px 10px 10px 0;
   width: 100%;
@@ -52,27 +53,67 @@
   border: none;
   border-bottom: 1px solid #e0e0e0;
 }
-.disclaimerDiv{
-    color: #878787;
-    font-size: 12px;
-    font-weight: 400;
+.disclaimerDiv {
+  color: #878787;
+  font-size: 12px;
+  font-weight: 400;
 }
-.disclaimerDiv a{
-    color: #2874f0;
-    text-decoration: none;
+.disclaimerDiv a {
+  color: #2874f0;
+  text-decoration: none;
 }
-.OTPButton{
-    margin-top: 16px;
+.OTPButton {
+  margin-top: 16px;
 }
-.OTPButton button{
-    background: #fb641b;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
-    border: none;
-    color: #fff;
-    font-family: inherit;
-    width: 100%;
-    height: 48px;
-    font-size: 15px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-    padding: 10px 20px;
+.OTPButton button {
+  background: #fb641b;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  border: none;
+  color: #fff;
+  font-family: inherit;
+  width: 100%;
+  height: 48px;
+  font-size: 15px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  border-radius: 2px;
+}
+.signUpDiv {
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.signUpDiv button {
+  all: unset;
+  color: #2874f0;
+  font-weight: 500;
+}
+.closeButton {
+  position: absolute;
+  left: 101%;
+  top: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 32px;
+  line-height: 1;
+  /* vertical-align: top; */
+}
+.popupContainer {
+  top: 0;
+  bottom: 0;
+  padding-top: 5rem;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10000;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  overflow-y: hidden;
+  /* height: 100vh; */
 }

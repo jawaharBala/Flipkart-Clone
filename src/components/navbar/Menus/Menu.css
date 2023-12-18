@@ -45,10 +45,9 @@ span {
 .menuItemsContainer li {
   padding: 8px 12px;
 }
-button {
-  all: unset;
-}
+
 .menuItems {
+  all:unset;
   display: flex;
   justify-content: space-between;
   gap: 2rem;

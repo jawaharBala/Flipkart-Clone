@@ -68,6 +68,7 @@
 .prevButton,
 .nextButton {
   display: flex;
+  border: 0;
   position: absolute;
   width: 40px;
   background-color: #fff;

@@ -17,8 +17,14 @@
   width: 100%;
   min-width: 25rem;
   gap: 1.2rem;
+  position: fixed;
+  background-color: #fff;
+  z-index: 9999;
+  top:0;
 }
-
+.icon{
+  all:unset
+}
 .icon,
 .searchInput,
 .loginButton {
