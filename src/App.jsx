@@ -4,6 +4,7 @@ import Navbar from "./components/navbar/Navbar";
 import OfferCarousel from "./components/carousel/Carousel";
 import Categories from "./components/categories/Categories";
 import ProductsSlide from "./components/products/ProductsSlide";
+import LoginPopup from "./components/login/login-popup/LoginPopup";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -69,6 +70,7 @@ function App() {
         <div className="categoriesBest">
           <ProductsSlide data={electronicsBest} />
         </div>
+        <LoginPopup/>
       </div>
     </div>
   );
