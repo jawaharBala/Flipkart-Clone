@@ -1,0 +1,116 @@
+.productSlideContainer {
+  background-color: white;
+}
+.sliderLayout {
+  overflow-x: scroll;
+  justify-content: normal;
+}
+
+.sliderContainer {
+  display: flex;
+  width: fit-content;
+  overflow-y: hidden;
+  padding: 0 6px 12px 6px;
+}
+.groupContainer {
+  display: flex;
+  flex-direction: column;
+  width: 172px;
+  margin: 0 8px;
+  align-items: stretch;
+  border: 1px solid #e0e0e0;
+  padding: 6px;
+  box-sizing: border-box;
+  min-height: 0px;
+  min-width: 0px;
+  position: relative;
+  z-index: 0;
+  border-radius: 4px;
+}
+.imageContainer {
+  aspect-ratio: 1/1;
+  flex: 1 1 0%;
+  overflow: hidden;
+  border-radius: 2px;
+  margin: auto 0;
+}
+.imageContainer img {
+  width: 100%;
+  display: block;
+  position: absolute;
+  inset: 0px;
+  padding: 6px;
+  object-fit: contain;
+  aspect-ratio: 1 / 1;
+}
+.imageContainer:hover {
+  transform: scale(1.2);
+}
+.typographyContainer {
+  display: flex;
+  flex-basis: auto;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: stretch;
+  border-width: 0px;
+  min-height: 0px;
+  min-width: 0px;
+  position: relative;
+  z-index: 0;
+  box-sizing: border-box;
+  height: 52px;
+}
+.groupNameTypography {
+  border-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  -webkit-line-clamp: 2;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.01px;
+  font-weight: 400;
+  font-family: inter_regular, fallback-inter_regular, Arial, sans-serif;
+}
+.offerTypography {
+  border-width: 0;
+  box-sizing: border-box;
+  display: inline;
+  white-space: nowrap;
+  overflow-wrap: break-word;
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: normal;
+  font-weight: 600;
+}
+.titleLayout{
+    display: flex;
+    min-height: 72px;
+    align-items: center;
+    padding-left: 8px;
+    justify-content: space-between;
+}
+.titleTypography {
+  border-width: 0px;
+  box-sizing: border-box;
+  display: inline;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.02px;
+  font-weight: 600;
+  font-family: inter_semi_bold, fallback-inter_semi_bold, Arial, sans-serif;
+}

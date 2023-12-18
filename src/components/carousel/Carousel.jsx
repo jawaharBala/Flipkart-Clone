@@ -28,33 +28,47 @@ const images = [
       "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/b8e07ff39439d998.jpg?q=20",
   },
   {
-    label:"Poco",
-    imgPath:"https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/9c3843ee9ca4c2e7.jpg?q=20"
+    label: "Poco",
+    imgPath:
+      "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/9c3843ee9ca4c2e7.jpg?q=20",
   },
   {
-    label:"Year end",
-    imgPath:"https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/2c7142dcb842dc4b.jpeg?q=20"
+    label: "Year end",
+    imgPath:
+      "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/2c7142dcb842dc4b.jpeg?q=20",
   },
   {
-    label:"Samsung F14",
-    imgPath:"https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/7e6f7f22ab2b746f.jpg?q=20"
-  }
+    label: "Samsung F14",
+    imgPath:
+      "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/7e6f7f22ab2b746f.jpg?q=20",
+  },
 ];
 
 const OfferCarousel = () => {
-  const [currentSlide, setCurrentSlide] = useState({ slide: 0, direction: "forward" });
+  const [currentSlide, setCurrentSlide] = useState({
+    slide: 0,
+    direction: "forward",
+  });
   const handlePrev = () => {
     if (currentSlide.slide > 0) {
-      setCurrentSlide({ ...currentSlide, slide: currentSlide.slide - 1 });
+      setCurrentSlide((prev) => {
+        return { ...prev, slide: prev.slide - 1 };
+      });
     } else {
-      setCurrentSlide({ ...currentSlide, slide: images.length - 1 });
+      setCurrentSlide((prev) => {
+        return { ...prev, slide: images.length - 1 };
+      });
     }
   };
   const handleNext = () => {
     if (currentSlide.slide < images.length - 1) {
-      setCurrentSlide({ ...currentSlide, slide: currentSlide.slide + 1 });
+      setCurrentSlide((prev) => {
+        return { ...prev, slide: prev.slide + 1 };
+      });
     } else {
-      setCurrentSlide({ ...currentSlide, slide: 0});
+      setCurrentSlide((prev) => {
+        return { ...prev, slide: 0 };
+      });
     }
   };
   useEffect(() => {
@@ -76,7 +90,7 @@ const OfferCarousel = () => {
     return () => {
       clearTimeout(timeOut);
     };
-  }, [currentSlide.slide]);
+  }, [currentSlide]);
 
   return (
     <div className="carousel">
@@ -104,7 +118,12 @@ const OfferCarousel = () => {
             {Array(images.length)
               .fill(0)
               .map((num, i) => (
-                <div key={i} className="circle" />
+                <div
+                  onClick={() => setCurrentSlide({ ...currentSlide, slide: i })}
+                  style={{ cursor: "pointer" }}
+                  key={i}
+                  className="circle"
+                />
               ))}
             <div
               className="worm"

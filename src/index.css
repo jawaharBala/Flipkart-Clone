@@ -1,12 +1,12 @@
-*,
+@import url("https://fonts.googleapis.com/css2?family=Dhurjati&family=Inter:wght@200&display=swap");
+* {
+  font-family: inter_regular, fallback-inter_regular, Arial, sans-serif;
+}*,
 ::after,
 ::before {
   box-sizing: border-box;
 }
-@import url("https://fonts.googleapis.com/css2?family=Dhurjati&family=Inter:wght@200&display=swap");
-* {
-  font-family: inter_regular, fallback-inter_regular, Arial, sans-serif;
-}
+
 :root {
 
   text-rendering: optimizeLegibility;
