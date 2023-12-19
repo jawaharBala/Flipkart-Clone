@@ -2,8 +2,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import "./LoginPopup.css";
 const LoginPopup = ({ setLoginPopup }) => {
+  const handleClick = (e) =>
+    e.target.className === "popupContainer" && setLoginPopup(false);
+
   return (
-    <div className="popupContainer" >
+    <div name="popupContainer" className="popupContainer" onClick={handleClick}>
       <div
         style={{
           position: "relative",
@@ -14,7 +17,7 @@ const LoginPopup = ({ setLoginPopup }) => {
         <button className="closeButton" onClick={() => setLoginPopup(false)}>
           X
         </button>
-        <div className="popupLayout" >
+        <div className="popupLayout">
           <div className="leftPanel">
             <span style={{ fontSize: "28px", fontWeight: 500, color: "#fff" }}>
               Login
