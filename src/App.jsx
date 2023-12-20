@@ -5,6 +5,7 @@ import OfferCarousel from "./components/carousel/Carousel";
 import Categories from "./components/categories/Categories";
 import ProductsSlide from "./components/products/ProductsSlide";
 import LoginPopup from "./components/login/login-popup/LoginPopup";
+import ProductPage from "./pages/product-page/ProductPage";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -136,6 +137,7 @@ function App() {
           <ProductsSlide data={electronicsBest} />
           <ProductsSlide data={fashionBest} />
         </div>
+        <ProductPage/>
       </div>
     </div>
   );

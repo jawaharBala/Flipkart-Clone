@@ -5,6 +5,7 @@ const LoginPopup = ({ setLoginPopup }) => {
   const handleClick = (e) =>
     e.target.className === "popupContainer" && setLoginPopup(false);
 
+
   return (
     <div name="popupContainer" className="popupContainer" onClick={handleClick}>
       <div

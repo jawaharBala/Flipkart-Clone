@@ -106,7 +106,6 @@
 .popupContainer {
   top: 0;
   bottom: 0;
-  padding-top: 5rem;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 10000;
@@ -114,5 +113,6 @@
   right: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
   overflow-y: hidden;
 }

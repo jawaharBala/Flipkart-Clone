@@ -16,7 +16,7 @@
 .groupContainer {
   display: flex;
   flex-direction: column;
-  width: 172px;
+  width: 14rem;
   margin: 0 8px;
   align-items: stretch;
   border: 1px solid #e0e0e0;
