@@ -1,12 +1,67 @@
 .pageContainer {
   width: 100%;
   background-color: #fff;
+  position: relative;
 }
 .picsContainer {
   width: 40%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+}
+.addToFavouritesButton{
+  cursor: pointer;
+  position: absolute;
+ left: 34%;
+  top: 15px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.1);
+  padding: 9px 12px 12px 9px;
+  background: #fff;
+}
+.prodLeftPanel{
+  display: flex;
   height: 446px;
+}
+.buttonsContainer{
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: row;
+  margin-top: 10px;
+}
+.addToCartButton, .buyNowButton{
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  align-items: center;
+  cursor: pointer;
+}
+.addToCartButton{
+  padding: 18px 8px;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+  border: none;
+  background:#ff9f00;
+  color: #fff;
+}
+.buyNowButton{
+  padding: 18px 8px;
+  border-radius: 2px;
+  background: #fb641b;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+  border: none;
+  color: #fff;
+}
+.buttonsContainer button{
+  width: 50%;
+  font-size: 16px;
+  font-weight: 500;
+ 
 }
 .prodDetailsContainer {
   width: 60%;
@@ -42,28 +97,11 @@
   align-items: center;
   justify-content: center;
 }
-@media (max-width: 1024px) {
-  .singleImageContainer img {
-    max-height: 352px;
-    max-width: 352px;
-  }
-}
-@media (max-width: 800px) {
-    .singleImageContainer img {
-      max-height: 252px;
-      max-width: 252px;
-    }
-  }
-  @media (max-width: 500px) {
-    .singleImageContainer img {
-      max-height: 152px;
-      max-width: 152px;
-    }
-  }
+
 .singleImageContainer img {
-  max-height: 416px;
-  max-width: 416px;
+  max-height: 20rem;
+  max-width: 20rem;
   object-fit: contain;
-  aspect-ratio: 1/1;
-  
+  width: 100%;
+  min-width: 10rem;
 }

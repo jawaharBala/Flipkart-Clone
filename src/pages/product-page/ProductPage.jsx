@@ -1,4 +1,7 @@
 import { useState } from "react";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import FlashOnIcon from "@mui/icons-material/FlashOn";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import "./ProductPage.css";
 const ProductPage = () => {
   const product = {
@@ -85,34 +88,49 @@ const ProductPage = () => {
   return (
     <div className="pageContainer">
       <div className="picsContainer">
-        <div className="allPicsLayout">
-          <ul style={{ all: "unset" }}>
-            {product.images.small.map((img, i) => {
-              return (
-                <div
-                  onMouseEnter={() => handleHover(i)}
-                  className="allImagesContainer"
-                  key={i}
-                >
-                  <img src={img} alt={product.name} />
-                </div>
-              );
-            })}
-          </ul>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            border: " 1px solid #f0f0f0",
-            width: "100%",
-          }}
-        >
-          <div style={{ margin: "0 auto" }}>
-            <div className="singleImageContainer">
-              <img src={product.images.big[currImg]} alt={product.tittle} />
+        <div className="prodLeftPanel">
+          <div className="addToFavouritesButton">
+            <FavoriteIcon sx={{width:"16px",height:"16px",fill:"#c2c2c2"}} />
+          </div>
+          <div className="allPicsLayout">
+            <ul style={{ all: "unset" }}>
+              {product.images.small.map((img, i) => {
+                return (
+                  <div
+                    onMouseEnter={() => handleHover(i)}
+                    className="allImagesContainer"
+                    key={i}
+                  >
+                    <img src={img} alt={product.name} />
+                  </div>
+                );
+              })}
+            </ul>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              border: " 1px solid #f0f0f0",
+              width: "100%",
+            }}
+          >
+            <div style={{ margin: "0 auto" }}>
+              <div className="singleImageContainer">
+                <img src={product.images.big[currImg]} alt={product.tittle} />
+              </div>
             </div>
           </div>
+        </div>
+        <div className="buttonsContainer">
+          <button className="addToCartButton">
+            <ShoppingCartIcon />
+            ADD TO CART
+          </button>
+          <button className="buyNowButton">
+            <FlashOnIcon />
+            BUY NOW
+          </button>
         </div>
       </div>
       <div className="prodDetailsContainer"></div>
