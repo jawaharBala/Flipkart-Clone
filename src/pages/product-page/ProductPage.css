@@ -2,31 +2,34 @@
   width: 100%;
   background-color: #fff;
   position: relative;
+  display: flex;
+  gap:8px;
+  line-height: 1.43;
 }
+
 .picsContainer {
   width: 40%;
   display: flex;
   flex-direction: column;
-
 }
-.addToFavouritesButton{
+.addToFavouritesButton {
   cursor: pointer;
   position: absolute;
- left: 34%;
+  left: 34%;
   top: 15px;
   width: 36px;
   height: 36px;
   border-radius: 50%;
   border: 1px solid #f0f0f0;
-  box-shadow: 0 1px 4px 0 rgba(0,0,0,.1);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
   padding: 9px 12px 12px 9px;
   background: #fff;
 }
-.prodLeftPanel{
+.prodLeftPanel {
   display: flex;
   height: 446px;
 }
-.buttonsContainer{
+.buttonsContainer {
   display: flex;
   gap: 10px;
   justify-content: space-between;
@@ -34,34 +37,34 @@
   flex-direction: row;
   margin-top: 10px;
 }
-.addToCartButton, .buyNowButton{
+.addToCartButton,
+.buyNowButton {
   display: flex;
   justify-content: center;
   gap: 3px;
   align-items: center;
   cursor: pointer;
 }
-.addToCartButton{
+.addToCartButton {
   padding: 18px 8px;
   border-radius: 2px;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   border: none;
-  background:#ff9f00;
+  background: #ff9f00;
   color: #fff;
 }
-.buyNowButton{
+.buyNowButton {
   padding: 18px 8px;
   border-radius: 2px;
   background: #fb641b;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   border: none;
   color: #fff;
 }
-.buttonsContainer button{
+.buttonsContainer button {
   width: 50%;
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 500;
- 
 }
 .prodDetailsContainer {
   width: 60%;
@@ -104,4 +107,49 @@
   object-fit: contain;
   width: 100%;
   min-width: 10rem;
+}
+.prodDetailsContainer span {
+  padding: 0;
+  line-height: 1.4;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-block;
+}
+.offers li {
+  list-style: none;
+}
+.listItems {
+  color: #212121;
+  position: relative;
+}
+.offers {
+  font-size: 14px;
+
+}
+.seller{
+  width: 100%;
+}
+.offers ul{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.offersTitle{
+  font-size: 1em;
+  font-weight: 600;
+  color: #212121;
+}
+.highlightsServices{
+  margin: 8px;
+}
+.highlightsServices, .highlightsServices > span{
+  display: flex;
+  font-weight: 500;
+  color: #878787;
+  padding-right: 10px;
+  width: 50%;
+  font-family: Roboto,Arial,sans-serif;
+}
+ul{
+  padding: 0;
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
+import StarIcon from "@mui/icons-material/Star";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import "./ProductPage.css";
 const ProductPage = () => {
@@ -90,7 +91,9 @@ const ProductPage = () => {
       <div className="picsContainer">
         <div className="prodLeftPanel">
           <div className="addToFavouritesButton">
-            <FavoriteIcon sx={{width:"16px",height:"16px",fill:"#c2c2c2"}} />
+            <FavoriteIcon
+              sx={{ width: "16px", height: "16px", fill: "#c2c2c2" }}
+            />
           </div>
           <div className="allPicsLayout">
             <ul style={{ all: "unset" }}>
@@ -133,7 +136,77 @@ const ProductPage = () => {
           </button>
         </div>
       </div>
-      <div className="prodDetailsContainer"></div>
+      <div className="prodDetailsContainer">
+        <span>{product.tittle}</span>
+        <div className="offers">
+          <span className="offersTitle">Available Offers</span>
+          <ul>
+            {product.offers["Available Offers"].map((offer) => {
+              return (
+                <div
+                  className="listItems"
+                  style={{ display: "flex", gap: "10px", alignItems: "center" }}
+                  key={offer}
+                >
+                  <img
+                    style={{ height: "18px,", width: "18px" }}
+                    src="https://rukminim2.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"
+                    alt="ul-li-style"
+                  />
+                  <li>{offer}</li>
+                </div>
+              );
+            })}
+          </ul>
+        </div>
+        <div style={{ display: "flex" }}>
+          <div className="highlightsServices">
+            <span>Highlights</span>
+            <ul style={{ margin: 0, color: "#212121" }}>
+              {product.highlights.map((highlight) => {
+                return <li key={highlight}>{highlight}</li>;
+              })}
+            </ul>
+          </div>
+          <div className="highlightsServices">
+            <span>Services</span>
+            <ul style={{ margin: 0, color: "#212121" }}>
+              {product.services.map((service) => {
+                return <li key={service}>{service}</li>;
+              })}
+            </ul>
+          </div>
+        </div>
+        <div className="highlightsServices seller">
+          <span>Seller </span>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-around",
+            }}
+          >
+            <ul style={{ margin: 0, color: "#212121" }}>
+              <span style={{ color: "#2874f0" }}>{product.seller.name}</span>
+              <div
+                style={{
+                  margin: "3px",
+                  display: "flex",
+                  flexDirection:"row",
+                  alignContent: "center",
+                }}
+              >
+                {product.seller.Rating}{" "}
+                <StarIcon sx={{ margin: "2px 0 0 2px", height: " 10px" }} />
+              </div>
+
+              {product.seller.services.map((service) => {
+                return <li key={service}>{service}</li>;
+              })}
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
