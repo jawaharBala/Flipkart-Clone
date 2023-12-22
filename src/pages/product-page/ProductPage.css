@@ -12,8 +12,8 @@
   display: flex;
   flex-direction: column;
   position: sticky;
-  top:70px;
-  bottom: 0;
+  top:0;
+  height: 100%;
 }
 .addToFavouritesButton {
   cursor: pointer;
@@ -71,6 +71,7 @@
 }
 .prodDetailsContainer {
   width: 60%;
+  display: initial;
  
 }
 .allPicsLayout {

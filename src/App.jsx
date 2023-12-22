@@ -138,6 +138,7 @@ function App() {
           <ProductsSlide data={fashionBest} />
         </div>
         <ProductPage/>
+        
       </div>
     </div>
   );
