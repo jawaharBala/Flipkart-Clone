@@ -86,6 +86,36 @@ const ProductPage = () => {
   };
   const [currImg, setCurrImg] = useState(0);
   const handleHover = (i) => setCurrImg(i);
+  const specificationFeature = (type) =>  <div className="specFeature">
+  <div className="specTitle">{type}</div>
+  <div className="specItems">
+    {Object.getOwnPropertyNames(product.Specifications[type]).map(
+      (property) => {
+        return (
+          <table key={property}>
+            <tbody>
+              <tr
+                style={{
+                  display: "flex",
+                  paddingBottom: "16px",
+                  flexFlow: "row wrap",
+                  width: "100%",
+                }}
+              >
+                <td
+                  style={{ color: " #878787", paddingRight: "8px" }}
+                >
+                  {property}
+                </td>
+                <td>{product.Specifications[type][property]}</td>
+              </tr>
+            </tbody>
+          </table>
+        );
+      }
+    )}
+  </div>
+</div>
   return (
     <div className="pageContainer">
       <div className="picsContainer">
@@ -192,7 +222,7 @@ const ProductPage = () => {
                 style={{
                   margin: "3px",
                   display: "flex",
-                  flexDirection:"row",
+                  flexDirection: "row",
                   alignContent: "center",
                 }}
               >
@@ -206,6 +236,13 @@ const ProductPage = () => {
             </ul>
           </div>
         </div>
+        <div className="specifications">
+          <div className="specificationsHeader">Specifications</div>
+              {specificationFeature("General")}
+              {specificationFeature("Dimensions")}
+              {specificationFeature("Warranty")}
+        </div>
+        <div className="specificationsReadMore"></div>
       </div>
     </div>
   );
