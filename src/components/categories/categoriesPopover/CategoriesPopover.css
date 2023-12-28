@@ -1,0 +1,15 @@
+.categoriesLayout {
+    z-index: 99999;
+}
+.categoriesLeft,
+.categoriesRight {
+  min-width: 256px;
+  background-color: #fff;
+}
+.categoriesLeft {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+.categoriesRight {
+}

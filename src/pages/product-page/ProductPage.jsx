@@ -192,7 +192,7 @@ const ProductPage = () => {
         <div style={{ display: "flex" }}>
           <div className="highlightsServices">
             <span>Highlights</span>
-            <ul style={{ margin: 0, color: "#212121" }}>
+            <ul style={{ margin: 0, color: "#212121",fontSize:"14px" }}>
               {product.highlights.map((highlight) => {
                 return <li key={highlight}>{highlight}</li>;
               })}
@@ -200,7 +200,7 @@ const ProductPage = () => {
           </div>
           <div className="highlightsServices">
             <span>Services</span>
-            <ul style={{ margin: 0, color: "#212121" }}>
+            <ul style={{ margin: 0, color: "#212121",fontSize:"14px" }}>
               {product.services.map((service) => {
                 return <li key={service}>{service}</li>;
               })}
@@ -214,10 +214,11 @@ const ProductPage = () => {
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-around",
+              fontSize:"14px"
             }}
           >
             <ul style={{ margin: 0, color: "#212121" }}>
-              <span style={{ color: "#2874f0" }}>{product.seller.name}</span>
+              <span style={{ color: "#2874f0" ,fontSize:"14px"}}>{product.seller.name}</span>
               <div
                 style={{
                   margin: "3px",

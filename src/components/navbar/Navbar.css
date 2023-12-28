@@ -116,3 +116,11 @@
 .cartText{
   min-width: auto
 }
+@media (max-width:700px) {
+  .cartButton,.loginButton,.moreOptions{
+    padding: 0 3px;
+  }
+  .longText,.expandIcon{
+    display: none;
+  }
+}

@@ -1,5 +1,9 @@
+import { ExpandMore } from "@mui/icons-material";
 import "./Categories.css";
+import CategoriesPopover from "./categoriesPopover/CategoriesPopover";
+import { useState } from "react";
 const Categories = () => {
+  const [subcategories,setSubcategories] = useState(false)
   const categories = [
     {
       name: "Top offers",
@@ -43,23 +47,30 @@ const Categories = () => {
     },
   ];
   return (
+    <>
     <div className="categoriesContainer">
       <div className="imgTextContainer">
         {categories.map((category) => (
-          <div className="mapInner"  key={category.name}>
+          <div 
+          // onMouseEnter={()=>setSubcategories(true)} onMouseLeave={()=>setSubcategories(false)}
+           className="mapInner" key={category.name}>
             <div className="imgContainer">
-              <img
-                className="img"
-                src={category.img}
-                key={category.name}
-              />
+              <img className="img" src={category.img} key={category.name} />
             </div>
-
-            <span className="text">{category.name}</span>
+            <span className="text">
+              {category.name}
+              <div className="expandIcon">
+                <ExpandMore />
+              </div>
+            </span>
           </div>
         ))}
-      </div>
+      </div>  
     </div>
+    <div style={{position:"absolute",bottom:"0"}}>
+    <CategoriesPopover/>
+    </div>
+    </>
   );
 };
 

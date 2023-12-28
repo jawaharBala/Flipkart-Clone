@@ -2,6 +2,7 @@
 .categoriesContainer {
     overflow-x: scroll;
     justify-content: normal;
+    position: relative;
 }
 }
 .categoriesContainer {
