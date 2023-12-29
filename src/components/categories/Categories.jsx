@@ -3,7 +3,10 @@ import "./Categories.css";
 import CategoriesPopover from "./categoriesPopover/CategoriesPopover";
 import { useState } from "react";
 const Categories = () => {
-  const [subcategories,setSubcategories] = useState(false)
+  const [subcategories, setSubcategories] = useState({
+    display: "none",
+    left: 0,
+  });
   const categories = [
     {
       name: "Top offers",
@@ -48,28 +51,47 @@ const Categories = () => {
   ];
   return (
     <>
-    <div className="categoriesContainer">
-      <div className="imgTextContainer">
-        {categories.map((category) => (
-          <div 
-          // onMouseEnter={()=>setSubcategories(true)} onMouseLeave={()=>setSubcategories(false)}
-           className="mapInner" key={category.name}>
-            <div className="imgContainer">
-              <img className="img" src={category.img} key={category.name} />
-            </div>
-            <span className="text">
-              {category.name}
-              <div className="expandIcon">
-                <ExpandMore />
+      <div className="categoriesContainer">
+        <div className="imgTextContainer">
+          {categories.map((category) => (
+            <div
+              // onMouseEnter={()=>setSubcategories(true)} onMouseLeave={()=>setSubcategories(false)}
+              // onMouseEnter={(e)=>console.log(e)}
+              onMouseEnter={(e) => {
+                setSubcategories({ display: "flex", left: +e.screenX - 80 });
+                console.log(e);
+              }}
+              onMouseLeave={(e) =>
+                setSubcategories({ display: "none", left: e.screenX })
+              }
+              className="mapInner"
+              key={category.name}
+            >
+              <div className="imgContainer">
+                <img className="img" src={category.img} key={category.name} />
               </div>
-            </span>
-          </div>
-        ))}
-      </div>  
-    </div>
-    <div style={{position:"absolute",bottom:"0"}}>
-    <CategoriesPopover/>
-    </div>
+              <span className="text">
+                {category.name}
+                <div className="expandIcon">
+                  <ExpandMore />
+                </div>
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div
+        style={{
+          display: subcategories.display,
+          position: "absolute",
+          bottom: "0",
+          top: "200px",
+          zIndex: "999",
+          left: `${subcategories.left}px`,
+        }}
+      >
+        <CategoriesPopover />
+      </div>
     </>
   );
 };

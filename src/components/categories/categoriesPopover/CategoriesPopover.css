@@ -1,15 +1,24 @@
 .categoriesLayout {
     z-index: 99999;
+    min-width: 240px;
+    box-shadow: 0 8px 8px 1px rgba(0,0,0,.3);
 }
 .categoriesLeft,
 .categoriesRight {
   min-width: 256px;
   background-color: #fff;
-}
-.categoriesLeft {
   display: flex;
   flex-direction: column;
+  align-items: start;
+}
+.categoriesLeft {
+
   position: absolute;
+  justify-content:space-around;
+
 }
 .categoriesRight {
+}
+.catText{
+  padding: 12px 16px;
 }

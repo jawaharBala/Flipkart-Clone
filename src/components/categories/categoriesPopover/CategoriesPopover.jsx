@@ -149,7 +149,7 @@ const CategoriesPopover = () => {
   return (
     <div className="categoriesLayout">
       <div className="categoriesLeft">{subCategories.map((cat)=>{
-        return <span key={cat.name}>{cat.name}</span>
+        return <span className="catText" key={cat.name}>{cat.name}</span>
       })}</div>
       <div className="categoryRight"></div>
     </div>
