@@ -1,9 +1,9 @@
-@media (max-width: 1200px){
-.categoriesContainer {
+@media (max-width: 1200px) {
+  .categoriesContainer {
     overflow-x: scroll;
     justify-content: normal;
     position: relative;
-}
+  }
 }
 .categoriesContainer {
   min-width: 90px;
@@ -13,6 +13,7 @@
   box-sizing: content-box;
   margin-bottom: 16px;
   margin-top: 70px;
+  overflow-x: scroll;
 }
 .imgTextContainer {
   position: relative;
@@ -37,6 +38,7 @@
   text-decoration: none;
   position: relative;
   box-sizing: content-box;
+  align-items: center;
 }
 .img {
   max-width: 100%;
@@ -54,6 +56,29 @@
   justify-content: center;
   line-height: 16px;
   font-weight: 600;
+}
+.expandIcon{
+  padding-top: 0;
+  display: flex;
+}
+.mapInner:hover {
+  & .text {
+    color: #2874f0;
+  }
+  & .expandIcon {
+    transform-origin: 50% 50%;
+    transform: scale(1) translateY(0) rotate(-180deg);
+    border-color: #2874f0;
+    transition: transform 0.3s;
+  }
+}
+.subCatLayover:hover .text {
+  color: #2874f0;
+}
+
+.subCatLayover {
+  position: absolute;
+  z-index: 999;
 }
 .imgContainer {
   position: relative;
@@ -73,11 +98,11 @@
     padding: 12px 12px 8px;
   }
 }
-.imgTextContainer:first-child{
-    padding-left: 24px;
+.imgTextContainer:first-child {
+  padding-left: 24px;
 }
-.imgTextContainer:last-child{
-    padding-right: 24px;
+.imgTextContainer:last-child {
+  padding-right: 24px;
 }
 :-webkit-scrollbar {
   display: none;

@@ -1,8 +1,10 @@
 import { ExpandMore } from "@mui/icons-material";
 import "./Categories.css";
 import CategoriesPopover from "./categoriesPopover/CategoriesPopover";
-import { useState } from "react";
+import { useRef, useState } from "react";
 const Categories = () => {
+  const hoverRef = useRef(null);
+  const catLayoverRef = useRef(null);
   const [subcategories, setSubcategories] = useState({
     display: "none",
     left: 0,
@@ -55,15 +57,28 @@ const Categories = () => {
         <div className="imgTextContainer">
           {categories.map((category) => (
             <div
-              // onMouseEnter={()=>setSubcategories(true)} onMouseLeave={()=>setSubcategories(false)}
-              // onMouseEnter={(e)=>console.log(e)}
+              ref={hoverRef}
               onMouseEnter={(e) => {
-                setSubcategories({ display: "flex", left: +e.screenX - 80 });
-                console.log(e);
+                window.innerWidth - e.screenX < 240
+                  ? setSubcategories({
+                      display: "flex",
+                      right: "10px",
+                    })
+                  : 120 > e.screenX
+                  ? setSubcategories({ display: "flex", left: "10px" })
+                  : setSubcategories({
+                      display: "flex",
+                      left:
+                        +e.screenX -
+                        (hoverRef.current.getBoundingClientRect().width/2),
+                    });
+                console.log(
+                  e.screenX,
+                  window.innerWidth,
+                  catLayoverRef.current.getBoundingClientRect().width
+                );
               }}
-              onMouseLeave={(e) =>
-                setSubcategories({ display: "none", left: e.screenX })
-              }
+              onMouseLeave={() => setSubcategories({ display: "none" })}
               className="mapInner"
               key={category.name}
             >
@@ -82,15 +97,18 @@ const Categories = () => {
       </div>
       <div
         style={{
-          display: subcategories.display,
-          position: "absolute",
-          bottom: "0",
-          top: "200px",
-          zIndex: "999",
-          left: `${subcategories.left}px`,
+          top: "190px",
+          ...subcategories,
         }}
+        ref={catLayoverRef}
+        className="subCatLayover"
+        onMouseEnter={() => {
+          setSubcategories({ display: "flex", ...subcategories });
+          console.log(window.innerWidth);
+        }}
+        onMouseLeave={() => setSubcategories({ display: "none" })}
       >
-        <CategoriesPopover />
+        <CategoriesPopover  />
       </div>
     </>
   );
