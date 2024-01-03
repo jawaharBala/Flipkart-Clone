@@ -1,7 +1,8 @@
 .categoriesLayout {
-    z-index: 99999;
-    min-width: 240px;
-    box-shadow: 0 8px 8px 1px rgba(0,0,0,.3);
+  z-index: 99999;
+  min-width: 240px;
+  box-shadow: 0 8px 8px 1px rgba(0, 0, 0, 0.3);
+  display: flex;
 }
 .categoriesLeft,
 .categoriesRight {
@@ -9,30 +10,28 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  box-shadow: 0 8px 8px 1px rgba(0,0,0,.3);
+  box-shadow: 0 8px 8px 1px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   background-color: #fff;
   z-index: 100;
-  font-family: inter_regular,fallback-inter_regular,Arial,sans-serif;
+  font-family: inter_regular, fallback-inter_regular, Arial, sans-serif;
   overflow: hidden;
   line-height: 20px;
+  justify-content: space-around;
+  height: 100%;
 }
-.categoriesLeft {
-  position: absolute;
-  justify-content:space-around;
-
+.categoriesRight:first-child {
+  font-weight: bold;
 }
-.categoriesRight {
-}
-.catText{
+.catText {
   padding: 12px 16px;
   width: 100%;
   display: flex;
-  font-family: fallback-inter_regular,Arial,sans-serif;
+  font-family: fallback-inter_regular, Arial, sans-serif;
   font-size: 12px;
 }
-.catText:hover{
+.catText:hover {
   font-weight: bold;
   background-color: #f0f5ff;
-  font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+  font-family: inter_semi_bold, fallback-inter_semi_bold, Arial, sans-serif;
 }

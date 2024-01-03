@@ -1,6 +1,7 @@
-import "./CategoriesPopover.css"
+import { useState } from "react";
+import "./CategoriesPopover.css";
 const CategoriesPopover = () => {
-
+  const [additionalCategories, setAdditionalCategories] = useState([]);
   const subCategories = [
     {
       name: "Men'S Top Wear",
@@ -128,6 +129,7 @@ const CategoriesPopover = () => {
         "Boys & Girls Shorts",
         "Boys & Girls Trackpants",
         "Boys & Girls Innerwear",
+        
       ],
     },
     {
@@ -147,11 +149,34 @@ const CategoriesPopover = () => {
     { name: "Winter", additionalCatgories: [] },
   ];
   return (
-    <div className="categoriesLayout">
-      <div className="categoriesLeft">{subCategories.map((cat)=>{
-        return <span className="catText" key={cat.name}>{cat.name}</span>
-      })}</div>
-      <div className="categoryRight"></div>
+    <div
+      className="categoriesLayout"
+      onMouseLeave={() => setAdditionalCategories([])}
+    >
+      <div className="categoriesLeft">
+        {subCategories.map((cat) => {
+          return (
+            <span
+              onMouseEnter={() =>
+                setAdditionalCategories(cat.additionalCatgories)
+              }
+              className="catText"
+              key={cat.name}
+            >
+              {cat.name}
+            </span>
+          );
+        })}
+      </div>
+      {additionalCategories.length > 0 && (
+        <div className="categoriesRight">
+          {additionalCategories.map((addcat) => (
+            <span className="catText" key={addcat}>
+              {addcat}
+            </span>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

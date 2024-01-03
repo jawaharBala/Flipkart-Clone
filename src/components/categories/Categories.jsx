@@ -62,15 +62,15 @@ const Categories = () => {
                 window.innerWidth - e.screenX < 240
                   ? setSubcategories({
                       display: "flex",
-                      right: "10px",
+                      right: (window.innerWidth - e.screenX)/2,
                     })
-                  : 120 > e.screenX
-                  ? setSubcategories({ display: "flex", left: "10px" })
+                  : 240 > e.screenX
+                  ? setSubcategories({ display: "flex", left: e.screenX })
                   : setSubcategories({
                       display: "flex",
                       left:
                         +e.screenX -
-                        (hoverRef.current.getBoundingClientRect().width/2),
+                        catLayoverRef.current.getBoundingClientRect().width / 2,
                     });
                 console.log(
                   e.screenX,
@@ -108,7 +108,7 @@ const Categories = () => {
         }}
         onMouseLeave={() => setSubcategories({ display: "none" })}
       >
-        <CategoriesPopover  />
+        <CategoriesPopover />
       </div>
     </>
   );
